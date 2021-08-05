@@ -2,9 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ghost
+  labels:
+    app: ghost
 spec:
-  replicas: 1
-  revisionHistoryLimit: 3
+  replicas: 3
   selector:
     matchLabels:
       app: ghost
@@ -14,10 +15,7 @@ spec:
         app: ghost
     spec:
       containers:
-      - image: ghost:latest
-        name: ghost
+      - name: ghost
+        image: ghost:latest
         ports:
         - containerPort: 2368
-      - env:
-        - name: url
-          value: https://blog.weave.red

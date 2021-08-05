@@ -15,10 +15,9 @@ spec:
     spec:
       containers:
       - name: ghost
+        image: ghost:latest
+        ports:
+        - containerPort: 2368
       - env:
         - name: url
           value: https://blog.weave.red
-      - image: ghost:latest
-        name: ghost
-        ports:
-        - containerPort: 2368

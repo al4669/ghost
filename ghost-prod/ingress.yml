@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - blog.weave.red
+    - nasta.weave.red
     secretName: ghost-tls
   rules:
-  - host: blog.weave.red
+  - host: nasta.weave.red
     http:
       paths:
       - path: /
